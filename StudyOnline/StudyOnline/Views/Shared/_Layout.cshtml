@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <!-- Bootstrap core CSS -->
+    @Styles.Render("~/Contents/css")
+</head>
+
+<body ng-controller="myCntrl">
+    <section id="container">
+        <!--header start-->
+        @RenderPage("_Header.cshtml")
+        <!--header end-->
+        <!--sidebar start-->
+        <aside>
+            @RenderPage("_MenuLeft.cshtml")
+        </aside>
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper nopadding-xs">
+                <!--state overview start-->
+                @RenderBody()
+                <!--state overview end-->
+            </section>
+        </section>
+        <!--main content end-->
+        <!--footer start-->
+        @RenderPage("_Footer.cshtml")
+        <!--footer end-->
+    </section>
+            @Scripts.Render("~/Contents/js")
+    @RenderSection("masterjs", required: false)
+</body>
+</html>

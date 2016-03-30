@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="list-course">
+    <div class="category-title">
+        <h3>Khóa học yêu thích</h3>
+    </div>
+
+    <div class="col-md-3 col-sm-6 col-xs-6 slider-top-grids course-item" ng-repeat="item in Courses">
+        <div class="course-item-img">
+            <a href="/Home/Detail" ng-click="viewDetail()"><img src="{{item.m_Item2.Avatar}}" /></a>
+        </div>
+        <div class="course-item-info">
+            <h3>
+                <a href="/Home/Detail" class="title title-info">{{item.m_Item2.CourseName}}</a>
+            </h3>
+            <div class="rating">
+                <div class="rate-box">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <span>(564)</span>
+                </div>
+            </div>
+            <ul>
+                <li><p class="author author-info"> <i class="fa fa-male"></i><a href="#" class="author">{{item.m_Item1.Name}}</a></p></li>
+                <li class="right-list"><p class="views views-info">{{item.m_Item2.ViewCount}}<i class="fa fa-eye"></i></p></li>
+            </ul>
+            <div class="course-price saleoff">
+                <strike>{{item.m_Item2.PriceSale}} đ</strike>     <span class="price">{{item.m_Item2.Price }} ₫</span>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"> </div>
+</div>
+<div class="list-course">
+    <div class="category-title">
+        <h3>Khóa học nổi bật</h3>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-6 slider-top-grids course-item" ng-repeat="item in CoursesCD">
+        <div class="course-item-img">
+            <a href="/Home/Detail" ng-click="viewDetail()"><img src="{{item.m_Item2.Avatar}}" /></a>
+        </div>
+        <div class="course-item-info">
+            <h3>
+                <a href="/Home/Detail" class="title title-info">{{item.m_Item2.CourseName}}</a>
+            </h3>
+            <div class="rating">
+                <div class="rate-box">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <span>(564)</span>
+                </div>
+            </div>
+            <ul>
+                <li><p class="author author-info"> <i class="fa fa-male"></i><a href="#" class="author">{{item.m_Item1.Name}}</a></p></li>
+                <li class="right-list"><p class="views views-info">{{item.m_Item2.ViewCount}}<i class="fa fa-eye"></i></p></li>
+            </ul>
+            <div class="course-price saleoff">
+                <strike>{{item.m_Item2.PriceSale}} đ</strike>     <span class="price">{{item.m_Item2.Price }} ₫</span>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"> </div>
+</div>
+<div class="list-course">
+    <div class="category-title">
+        <h3>Khóa học mới</h3>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-6 slider-top-grids course-item" ng-repeat="item in CoursesP">
+        <div class="course-item-img">
+            <a href="/Home/Detail"><img src="{{item.m_Item2.Avatar}}" /></a>
+        </div>
+        <div class="course-item-info">
+            <h3>
+                <a href="/Home/Detail" class="title title-info">{{item.m_Item2.CourseName}}</a>
+            </h3>
+            <div class="rating">
+                <div class="rate-box">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <span>(564)</span>
+                </div>
+            </div>
+            <ul>
+                <li><p class="author author-info"> <i class="fa fa-male"></i><a href="#" class="author">{{item.m_Item1.Name}}</a></p></li>
+                <li class="right-list"><p class="views views-info">{{item.m_Item2.ViewCount}}<i class="fa fa-eye"></i></p></li>
+            </ul>
+            <div class="course-price saleoff">
+                <strike>{{item.m_Item2.PriceSale}} đ</strike>     <span class="price">{{item.m_Item2.Price }} ₫</span>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"> </div>
+</div>
+
