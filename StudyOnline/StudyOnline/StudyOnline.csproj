@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\_SourceCodeDemo\StudyOnline\StudyOnline.Entities\bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
@@ -118,10 +122,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -158,8 +164,7 @@
     <Content Include="Contents\HomeIndex\css\bootstrap.min.css" />
     <Content Include="Contents\HomeIndex\css\custom.css" />
     <Content Include="Contents\HomeIndex\css\flexslider.css" />
-    <Content Include="Contents\HomeIndex\js\bootstrap.min.js" />
-    <Content Include="Contents\HomeIndex\js\flexslider.js" />
+    <Content Include="Contents\HomeIndex\js\jquery.flexslider-min.js" />
     <Content Include="Contents\img\g.jpg" />
     <Content Include="Contents\img\nav-expand.png" />
     <Content Include="Contents\img\search-icon.png" />
@@ -1057,6 +1062,11 @@
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Shared\_LayoutHomeIndex.cshtml" />
     <Content Include="Views\Home\HomeIndex.cshtml" />
+    <Content Include="Views\Shared\_Login.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ViewChangePass.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StudyOnline.Common\StudyOnline.Common.csproj">

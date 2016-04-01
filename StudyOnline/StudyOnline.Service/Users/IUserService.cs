@@ -17,5 +17,7 @@ namespace StudyOnline.Service.Users
         int Login(string userName, string password);
         bool Signup(User user);
         void Active(int id, bool status);
+        bool CheckEmail(string email);
+        bool CheckUserName(string userName);
     }
 }
