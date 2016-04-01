@@ -33,6 +33,7 @@ namespace StudyOnline.Controllers
                 var userSession = new UserLogin();
                 userSession.UserName = user.UserName;
                 userSession.UserID = user.ID;
+                Session["UserID"] = user.ID;
                 Session.Add(Common.CommonConstants.USER_SESSION, userSession); //Thêm vào Session
                 return RedirectToAction("Index", "Home");
             }
