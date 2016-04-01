@@ -12,8 +12,8 @@ namespace StudyOnline.API.Controllers
 {
     public class AccountController : ApiController
     {
-        UserService userService = new UserService();
-        [HttpPost, ActionName("Login")]
+        //UserService userService = new UserService();
+        //[HttpPost, ActionName("Login")]
         //public int Login(User model)
         //{
         //    var result = userService.Login(model.UserName, Encryptor.MD5Hash(model.Password));
