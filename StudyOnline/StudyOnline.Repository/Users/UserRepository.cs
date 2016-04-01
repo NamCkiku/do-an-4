@@ -5,10 +5,11 @@ using System.Drawing;
 using System.Text;
 using System.Threading.Tasks;
 using StudyOnline.Entities.Models;
+using StudyOnline.Common;
 
 namespace StudyOnline.Repository.Users
 {
-   
+
     public class UserRepository : IUserRepository
     {
         /// <summary>
@@ -22,6 +23,13 @@ namespace StudyOnline.Repository.Users
                 return _db.User.ToList();
             }
         }
+        //public List<StudyOnline.Entities.Models.User> ListUserName()
+        //{
+        //    using (StudyOnline.Entities.Models.StudyOnline _db = new StudyOnline.Entities.Models.StudyOnline())
+        //    {
+        //        return _db.User.Where(x=>x.UserName.Equals(.ToList();
+        //    }
+        //}
 
         /// <summary>
         /// Xem chi tiết người dùng
@@ -53,6 +61,15 @@ namespace StudyOnline.Repository.Users
             {
                 try
                 {
+                    //User data = new User();
+                    //data.UserName = tq.UserName;
+                    //data.Name = tq.Name;
+                    //data.Address = tq.Address;
+                    //data.Email = tq.Email;
+                    //data.Phone = tq.Phone;
+                    //data.Avatar = tq.Avatar;
+                    //data.Password = Encryptor.MD5Hash(tq.Password);
+                    //data.Status = false;
                     _db.User.Add(tq);
                     _db.SaveChanges();
                     return tq.ID;
@@ -175,7 +192,7 @@ namespace StudyOnline.Repository.Users
         {
             using (StudyOnline.Entities.Models.StudyOnline _db = new StudyOnline.Entities.Models.StudyOnline())
             {
-                return _db.User.Count(x => x.UserName == userName)>0;
+                return _db.User.Count(x => x.UserName == userName) > 0;
             }
         }
         public bool CheckEmail(string email)
@@ -185,64 +202,24 @@ namespace StudyOnline.Repository.Users
                 return _db.User.Count(x => x.Email == email) > 0;
             }
         }
-        //public void Register(User models, HttpPostedFileBase file)
+        //public int GetPassword(User model)
         //{
-        //    var fileName = GetDateName() + "_" + Path.GetFileName(file.FileName);
-        //    var path = Path.Combine(Server.MapPath("~/Uploads/files/imageuser/"), fileName);
-        //    var a = file.ContentType;
-        //    var b = file.ContentLength;
-        //    if ((a.Equals("image/jpeg") || a.Equals("image/jpg") || a.Equals("image/png")) && b < 4194304)
+        //    using (StudyOnline.Entities.Models.StudyOnline _db = new StudyOnline.Entities.Models.StudyOnline())
         //    {
-        //        file.SaveAs(path);
-        //    }
-        //    else
-        //    {
-        //        ViewBag.Message = "Kieu file(.png, .jpg,jpeg) va nho hon 4MB";
-        //        return View("ViewRegister", models);
-        //    }
-        //    var filepathToSave = "/Uploads/files/imageuser/" + fileName;
-        //    if (ModelState.IsValid)
-        //    {
-        //        var kt = db.Users.Where(x => x.UserName.Equals(models.UserName)).ToList();
-        //        var mail = db.Users.Where(x => x.Email.Equals(models.Email)).ToList();
-        //        if (kt.Count == 0 && mail.Count == 0)
+        //        var data = _db.User.Where(x => x.UserName == model.UserName && x.Email == model.Email).ToList();
+        //        if (data.Count > 0)
         //        {
-        //            if (models.Captcha.Equals(Session["captcha"].ToString()))
-        //            {
-        //                User data = new User()
-        //                {
-        //                    Code = models.Code,
-        //                    Money = 0,
-        //                    Password = models.Password,
-        //                    Phone = models.Phone,
-        //                    Email = models.Email,
-        //                    Role = "member",
-        //                    UserName = models.UserName,
-        //                    Active = false,
-        //                    ImageUrl = filepathToSave,
-        //                    History = false
-        //                };
-        //                db.Users.Add(data);
-        //                db.SaveChanges();
-        //                //
-        //                var maxid = db.Users.Max(x => x.UserId);
-        //                //tao link de gui
-        //                var u = Request.Url.Authority;
-        //                var link = "http://" + u + "/User/ActiveAcc?id=" + maxid + "&active=true";
-        //                PageHelp.SendMail("Kích hoạt tài khoản xổ số", "Ban click vào link de kich hoat tai khoan: " + link, "bondt90@gmail.com", "niutonoo12", models.Email, "bondt90");
-        //                //
-        //                ViewBag.Message = "Ban da dang ky thanh cong, xin moi vao hom thu de kich hoat";
-        //                return View("ViewRegister");
-        //            }
-        //            ViewBag.Message = "Ma bao ve chua dung";
+        //            var newpass = SendMail.RandomString(6);
+        //            var id = Convert.ToInt32(data[0].ID);
+        //            var dataUpdate = _db.User.SingleOrDefault(x => x.ID == id);
+        //            dataUpdate.Password = newpass;
+        //            _db.SaveChanges();
         //        }
         //        else
         //        {
-        //            ViewBag.Message = "Tai khoan da ton tai hoac emali da ton tai";
+        //            return 0;
         //        }
-
         //    }
-        //    return View("ViewRegister", models);
         //}
     }
 }
